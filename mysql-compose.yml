@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+
+  db:
+    image: mysql
+    container_name: mysqldb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - 42333:3306
+
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - 9090:8080
+      
+#https://www.it-swarm-es.com/es/mysql/como-conectar-mysql-workbench-para-ejecutar-mysql-dentro-de-docker/1056495646/      
